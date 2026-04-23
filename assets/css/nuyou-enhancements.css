@@ -146,6 +146,16 @@ main > section + section::before {
 /* ---------- Typography ---------- */
 h1, h2, h3 { letter-spacing: -0.01em; color: var(--nu-charcoal); }
 
+.hero h1, .hero h2, .hero h3, .hero p,
+section.hero h1, section.hero h2, section.hero h3, section.hero p {
+  color: #F6EFE4;
+}
+
+.stars {
+  color: #D4A574;
+  font-size: 1.1rem;
+}
+
 main > section h2::after {
   content: "";
   display: block;
