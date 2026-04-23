@@ -95,7 +95,9 @@
 
                 <div class="team-card">
                     <div class="team-card-inner">
-                        <div class="team-photo" style="background: linear-gradient(135deg, #c9b5a0 0%, #a08060 100%);"></div>
+                        <div class="team-photo" style="background: linear-gradient(135deg, #c9b5a0 0%, #a08060 100%);">
+                            <div class="photo-upload-hint">+</div>
+                        </div>
                         <div class="team-info">
                             <h3>Dr. Emily Carter, MMS, PA-C</h3>
                             <p class="team-title">Founder & Lead Injection Artist</p>
@@ -117,7 +119,9 @@
 
                 <div class="team-card">
                     <div class="team-card-inner reverse">
-                        <div class="team-photo" style="background: linear-gradient(135deg, #a0b5c0 0%, #607580 100%);"></div>
+                        <div class="team-photo" style="background: linear-gradient(135deg, #a0b5c0 0%, #607580 100%);">
+                            <div class="photo-upload-hint">+</div>
+                        </div>
                         <div class="team-info">
                             <h3>Sarah Bennett, MSN, APRN, FNP-C</h3>
                             <p class="team-title">Injection Artist & Skin Specialist</p>
@@ -139,7 +143,9 @@
 
                 <div class="team-card">
                     <div class="team-card-inner">
-                        <div class="team-photo" style="background: linear-gradient(135deg, #c0a090 0%, #906040 100%);"></div>
+                        <div class="team-photo" style="background: linear-gradient(135deg, #c0a090 0%, #906040 100%);">
+                            <div class="photo-upload-hint">+</div>
+                        </div>
                         <div class="team-info">
                             <h3>Dr. Morgan Hayes, MD</h3>
                             <p class="team-title">Medical Director & Aesthetic Physician</p>
@@ -291,41 +297,47 @@
     </div>
 
     <section class="booking" id="booking">
-        <div class="container">
-            <h2>Ready to Look & Feel Your Best?</h2>
-            <p>Schedule your FREE consultation with our aesthetics experts today.</p>
-            <div class="booking-options">
-                <div class="booking-option">
-                    <h3><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"></rect><path d="M11 17H13"></path></svg>Call Us</h3>
-                    <p><a href="tel:+13052040659">(305) 204-0659</a></p>
+        <div class="cta-section-inner">
+            <div class="cta-left">
+                <h2>Ready to Look & Feel Your Best?</h2>
+                <p>Schedule your FREE consultation with our aesthetics experts today. Same-day appointments often available.</p>
+                <div class="cta-trust-badges">
+                    <span>★ 5.0 Google Rating</span>
+                    <span>✓ Board-Certified Experts</span>
+                    <span>◆ 459+ Happy Clients</span>
                 </div>
-                <div class="booking-option">
-                    <h3><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6H19V14H10L6 18V14H5Z"></path></svg>Text Us</h3>
-                    <p><a href="sms:+13052040659">Text (305) 204-0659</a></p>
-                </div>
-                <div class="booking-option">
-                    <h3><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="6" width="17" height="12" rx="2"></rect><path d="M4 7L12 13L20 7"></path></svg>Email</h3>
-                    <p><a href="mailto:inquiries@lovethenuyou.com">inquiries@lovethenuyou.com</a></p>
-                </div>
+                <button class="cta-main-btn" onclick="openBookingModal()">Book Free Consultation</button>
             </div>
-            <button class="cta-primary cta-large" onclick="openBookingModal()">Book Consultation Online</button>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Visit Us at Marina Blue</h2>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21C12 21 5 14.5 5 9.8C5 6.1 8.1 3 12 3C15.9 3 19 6.1 19 9.8C19 14.5 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Address</h3>
-                    <p>Nimbler Offices at Marina Blue<br>888 Biscayne Blvd, Suite 505<br>Miami, FL 33132</p>
-                    <h3><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 8V12L15 14"></path></svg>Hours</h3>
-                    <p>Monday: 10am - 8pm<br>Tue-Thu: 8am - 8pm<br>Friday-Saturday: 9am - 8pm<br>Sunday: 9am - 6pm</p>
-                    <h3><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M9 17V7H13C14.7 7 16 8.3 16 10C16 11.7 14.7 13 13 13H9"></path></svg>Parking</h3>
-                    <p>Complimentary valet parking available</p>
-                </div>
-                <div class="contact-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.3254589847996!2d-80.1903!3d25.763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDQ1JzQ3LjAiTiA4MMKwMTEnMjUuMSJX!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <div class="cta-right">
+                <div class="cta-contact-cards">
+                    <a href="tel:+13052040659" class="cta-contact-card">
+                        <span class="cta-icon">☎</span>
+                        <div>
+                            <strong>Call Us</strong>
+                            <span>(305) 204-0659</span>
+                        </div>
+                    </a>
+                    <a href="sms:+13052040659" class="cta-contact-card">
+                        <span class="cta-icon">✉</span>
+                        <div>
+                            <strong>Text Us</strong>
+                            <span>(305) 204-0659</span>
+                        </div>
+                    </a>
+                    <a href="mailto:inquiries@lovethenuyou.com" class="cta-contact-card">
+                        <span class="cta-icon">@</span>
+                        <div>
+                            <strong>Email Us</strong>
+                            <span>inquiries@lovethenuyou.com</span>
+                        </div>
+                    </a>
+                    <a href="#contact" class="cta-contact-card">
+                        <span class="cta-icon">◆</span>
+                        <div>
+                            <strong>Visit Us</strong>
+                            <span>888 Biscayne Blvd, Miami</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -376,6 +388,25 @@
                     <div class="slider-divider"></div>
                     <div class="slider-label before">Before</div>
                     <div class="slider-label after">After</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Visit Us at Marina Blue</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21C12 21 5 14.5 5 9.8C5 6.1 8.1 3 12 3C15.9 3 19 6.1 19 9.8C19 14.5 12 21 12 21Z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>Address</h3>
+                    <p>Nimbler Offices at Marina Blue<br>888 Biscayne Blvd, Suite 505<br>Miami, FL 33132</p>
+                    <h3><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M12 8V12L15 14"></path></svg>Hours</h3>
+                    <p>Monday: 10am - 8pm<br>Tue-Thu: 8am - 8pm<br>Friday-Saturday: 9am - 8pm<br>Sunday: 9am - 6pm</p>
+                    <h3><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M9 17V7H13C14.7 7 16 8.3 16 10C16 11.7 14.7 13 13 13H9"></path></svg>Parking</h3>
+                    <p>Complimentary valet parking available</p>
+                </div>
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.3254589847996!2d-80.1903!3d25.763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDQ1JzQ3LjAiTiA4MMKwMTEnMjUuMSJX!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>

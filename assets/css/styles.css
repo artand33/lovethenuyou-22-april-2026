@@ -140,7 +140,7 @@ section h2 { font-family: var(--serif); font-size: 2.5rem; text-align: center; m
 .calculator-controls select, .calculator-controls input { flex: 1; padding: 10px; border: 2px solid var(--primary-gold); border-radius: var(--radius-md); }
 #calc-result { color: var(--primary-gold); font-size: 1.3rem; }
 
-.booking { background: var(--dark-charcoal); color: var(--cream-bg); text-align: center; }
+.booking { background: var(--dark-charcoal); color: var(--cream-bg); text-align: left; }
 .booking h2 { color: var(--cream-bg); }
 .booking > .container > p { font-size: 1.1rem; margin-bottom: var(--spacing-lg); }
 .booking-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-lg); margin: var(--spacing-xl) 0; }
@@ -423,9 +423,40 @@ section h2 { font-family: var(--serif); font-size: 2.5rem; text-align: center; m
 }
 
 .team-photo {
+    position: relative;
     width: 100%;
     height: 100%;
     min-height: 500px;
+}
+
+.photo-upload-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    background: rgba(212, 165, 116, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+}
+
+.team-card:hover .photo-upload-hint {
+    opacity: 1;
+}
+
+.photo-upload-hint:hover {
+    background: rgba(212, 165, 116, 1);
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
 .team-info {
@@ -542,5 +573,114 @@ section h2 { font-family: var(--serif); font-size: 2.5rem; text-align: center; m
 
     .team-info {
         padding: 32px 24px;
+    }
+}
+
+.cta-section-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+.cta-left h2 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.cta-left p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    opacity: 0.85;
+}
+
+.cta-trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+
+.cta-trust-badges span {
+    background: rgba(212, 165, 116, 0.15);
+    border: 1px solid rgba(212, 165, 116, 0.3);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--nu-gold-light, #E8CFA9);
+}
+
+.cta-main-btn {
+    padding: 16px 36px;
+    background: var(--primary-gold, #D4A574);
+    color: #2C2C2C;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+}
+
+.cta-main-btn:hover {
+    background: #c99261;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212, 165, 116, 0.4);
+}
+
+.cta-contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cta-contact-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+}
+
+.cta-contact-card:hover {
+    background: rgba(212, 165, 116, 0.12);
+    border-color: rgba(212, 165, 116, 0.45);
+    transform: translateX(4px);
+}
+
+.cta-icon {
+    font-size: 24px;
+    min-width: 32px;
+}
+
+.cta-contact-card strong {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--nu-gold-light, #E8CFA9);
+    margin-bottom: 2px;
+}
+
+.cta-contact-card > div span {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 768px) {
+    .cta-section-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 60px 24px;
     }
 }
