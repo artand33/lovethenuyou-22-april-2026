@@ -21,6 +21,7 @@
                 </div>
                 <nav class="nav" id="nav">
                     <a href="#about">About</a>
+                    <a href="#team">Team</a>
                     <a href="#services">Services</a>
                     <a href="#pricing">Pricing</a>
                     <a href="#gallery">Gallery</a>
@@ -49,8 +50,8 @@
                 <li><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5L10 17.5L19 7.5"></path></svg>Luxury medical spa in downtown Miami</li>
             </ul>
             <div class="cta-group">
-                <button class="cta-primary" onclick="scrollTo('booking')">Book Free Consultation</button>
-                <button class="cta-secondary" onclick="scrollTo('services')">Explore All Services</button>
+                <button class="cta-primary" onclick="openBookingModal()">Book Free Consultation</button>
+                <button class="cta-secondary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore All Services</button>
             </div>
         </div>
     </section>
@@ -79,6 +80,85 @@
                     <h3>Transparent Pricing</h3>
                     <p>No hidden fees. Payment plans available. Beauty Bank membership saves 20%.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="team-header">
+                <h2>Meet the NuTeam</h2>
+                <p>Board-certified experts dedicated to enhancing your natural beauty with precision, artistry, and care.</p>
+            </div>
+
+            <div class="team-cards">
+
+                <div class="team-card">
+                    <div class="team-card-inner">
+                        <div class="team-photo" style="background: linear-gradient(135deg, #c9b5a0 0%, #a08060 100%);"></div>
+                        <div class="team-info">
+                            <h3>Dr. Emily Carter, MMS, PA-C</h3>
+                            <p class="team-title">Founder & Lead Injection Artist</p>
+                            <p class="team-bio">With over 12 years of experience in medical aesthetics, Dr. Carter is renowned for her philosophy of enhancing each client's natural beauty without overstatement. Trained at Johns Hopkins and NYU, she specializes in advanced neurotoxins, structural filler placement, and full-face rejuvenation. Her approach blends clinical precision with an artist's eye.</p>
+                            <div class="team-expertise">
+                                <div class="expertise-item" onclick="this.classList.toggle('open')">
+                                    <span>Areas of Expertise</span> <span class="expertise-arrow">▼</span>
+                                    <div class="expertise-content">Botox, Dysport, Dermal Fillers, Lip Augmentation, Jawline Contouring</div>
+                                </div>
+                                <div class="expertise-item" onclick="this.classList.toggle('open')">
+                                    <span>Most Loved Treatment</span> <span class="expertise-arrow">▼</span>
+                                    <div class="expertise-content">Full-face liquid facelift — the transformation clients experience in a single session is extraordinary.</div>
+                                </div>
+                            </div>
+                            <button class="team-book-btn" onclick="openBookingModal()">Book with Dr. Carter</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card-inner reverse">
+                        <div class="team-photo" style="background: linear-gradient(135deg, #a0b5c0 0%, #607580 100%);"></div>
+                        <div class="team-info">
+                            <h3>Sarah Bennett, MSN, APRN, FNP-C</h3>
+                            <p class="team-title">Injection Artist & Skin Specialist</p>
+                            <p class="team-bio">Sarah brings a rare combination of clinical expertise and an instinct for natural aesthetics. A University of Miami graduate with 8 years in advanced dermatology and regenerative medicine, she specializes in skin health optimization, PRP therapies, and microneedling. Known for her calm, consultative approach, clients trust her to deliver balanced, long-lasting results.</p>
+                            <div class="team-expertise">
+                                <div class="expertise-item" onclick="this.classList.toggle('open')">
+                                    <span>Areas of Expertise</span> <span class="expertise-arrow">▼</span>
+                                    <div class="expertise-content">PRP, RF Microneedling, Skin Resurfacing, Hair Restoration, Neurotoxins</div>
+                                </div>
+                                <div class="expertise-item" onclick="this.classList.toggle('open')">
+                                    <span>Most Loved Treatment</span> <span class="expertise-arrow">▼</span>
+                                    <div class="expertise-content">RF Microneedling — the skin transformation after a series of sessions is truly life-changing for clients.</div>
+                                </div>
+                            </div>
+                            <button class="team-book-btn" onclick="openBookingModal()">Book with Sarah</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card-inner">
+                        <div class="team-photo" style="background: linear-gradient(135deg, #c0a090 0%, #906040 100%);"></div>
+                        <div class="team-info">
+                            <h3>Dr. Morgan Hayes, MD</h3>
+                            <p class="team-title">Medical Director & Aesthetic Physician</p>
+                            <p class="team-bio">Dr. Hayes is a board-certified physician with 15 years of experience at the intersection of medicine and beauty. A Harvard Medical School graduate, she oversees all clinical protocols at NuYou and personally performs complex treatments including non-surgical body contouring, medical weight loss, and advanced vascular treatments. Her commitment to safety and results is unmatched.</p>
+                            <div class="team-expertise">
+                                <div class="expertise-item" onclick="this.classList.toggle('open')">
+                                    <span>Areas of Expertise</span> <span class="expertise-arrow">▼</span>
+                                    <div class="expertise-content">Body Contouring, Medical Weight Loss, Vein Destruction, NAD+ Wellness, PRF Treatments</div>
+                                </div>
+                                <div class="expertise-item" onclick="this.classList.toggle('open')">
+                                    <span>Most Loved Treatment</span> <span class="expertise-arrow">▼</span>
+                                    <div class="expertise-content">PRF Organic Gel Filler — completely natural, zero synthetic material, and the results are stunning.</div>
+                                </div>
+                            </div>
+                            <button class="team-book-btn" onclick="openBookingModal()">Book with Dr. Hayes</button>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
