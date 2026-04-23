@@ -23,12 +23,12 @@
                     <a href="#about">About</a>
                     <a href="#team">Team</a>
                     <a href="#services">Services</a>
-                    <a href="#pricing">Pricing</a>
                     <a href="#gallery">Gallery</a>
+                    <a href="#pricing">Pricing</a>
                     <a href="#testimonials">Reviews</a>
                     <a href="#contact">Contact</a>
                 </nav>
-                <button class="book-now" onclick="openBookingModal()">BOOK NOW</button>
+                <button class="cta-primary nav-cta book-now" onclick="openBookingModal()">Book Now</button>
                 <button class="menu-toggle" id="menuToggle">☰</button>
             </div>
         </div>
@@ -52,6 +52,56 @@
             <div class="cta-group">
                 <button class="cta-primary" onclick="openBookingModal()">Book Free Consultation</button>
                 <button class="cta-secondary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore All Services</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <h2>Meet Your Providers</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-photo" style="background: url('https://placehold.co/300x320/e8d5c4/8b7355?text=JE') center/cover;"></div>
+                    <div class="team-info">
+                        <h3>Jordan Ellis</h3>
+                        <p class="credentials">Nurse Practitioner (NP-C)</p>
+                        <p class="bio">Specializes in injectable artistry with over 7 years of experience. Board-certified injector known for natural, balanced results.</p>
+                        <div class="specialties">
+                            <span class="specialty-tag">Botox</span>
+                            <span class="specialty-tag">Fillers</span>
+                            <span class="specialty-tag">Liquid Facelift</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo" style="background: url('https://placehold.co/300x320/d4b896/7a5c3a?text=RC') center/cover;"></div>
+                    <div class="team-info">
+                        <h3>Riley Carter</h3>
+                        <p class="credentials">Physician Assistant (PA-C)</p>
+                        <p class="bio">Expert in skin resurfacing and laser treatments. Passionate about helping clients achieve radiant, youthful skin through advanced technologies.</p>
+                        <div class="specialties">
+                            <span class="specialty-tag">RF Microneedling</span>
+                            <span class="specialty-tag">Laser Treatments</span>
+                            <span class="specialty-tag">Chemical Peels</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-photo" style="background: url('https://placehold.co/300x320/c9a882/6b4c2a?text=MH') center/cover;"></div>
+                    <div class="team-info">
+                        <h3>Dr. Morgan Hayes</h3>
+                        <p class="credentials">Medical Director (MD)</p>
+                        <p class="bio">Board-certified physician and medical director with 12+ years of aesthetic medicine experience. Ensures highest standards of safety and artistry.</p>
+                        <div class="specialties">
+                            <span class="specialty-tag">Body Contouring</span>
+                            <span class="specialty-tag">Medical Grade</span>
+                            <span class="specialty-tag">Wellness</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -84,7 +134,7 @@
         </div>
     </section>
 
-    <section class="team-section" id="team">
+    <section class="team-section" id="team-bios">
         <div class="container">
             <div class="team-header">
                 <h2>Meet the NuTeam</h2>
@@ -173,9 +223,9 @@
         <div class="container">
             <h2>Our Most Popular Services</h2>
             <div class="service-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn active" data-filter="all">All Services</button>
                 <button class="filter-btn" data-filter="injectables">Injectables</button>
-                <button class="filter-btn" data-filter="skin">Skin</button>
+                <button class="filter-btn" data-filter="skin">Skin Care</button>
                 <button class="filter-btn" data-filter="body">Body</button>
                 <button class="filter-btn" data-filter="wellness">Wellness</button>
             </div>
@@ -204,49 +254,17 @@
                     <p>Semaglutide, Tirzepatide, NAD+ infusions & more</p>
                     <a href="#pricing" class="learn-more">View Pricing →</a>
                 </div>
-                <div class="service-card" data-category="body">
+                <div class="service-card" data-category="wellness">
                     <div class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="17" cy="17" r="4"></circle><circle cx="31" cy="31" r="4"></circle><path d="M20 20L28 28"></path><path d="M13 35L35 13"></path><path d="M10 13L18 21"></path></svg></div>
                     <h3>Hair Restoration</h3>
                     <p>PRP, exosomes & advanced regenerative treatments</p>
                     <a href="#pricing" class="learn-more">View Pricing →</a>
                 </div>
-                <div class="service-card" data-category="wellness">
+                <div class="service-card" data-category="injectables">
                     <div class="service-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 12L25 27L14 38L10 12Z"></path><path d="M25 27L38 14"></path><path d="M32 8V13"></path><path d="M39 11L35 14"></path><path d="M41 19H36"></path><path d="M30 18L28 21"></path></svg></div>
                     <h3>Special Events</h3>
                     <p>Wedding prep, special occasion glow-ups & prep plans</p>
                     <a href="#pricing" class="learn-more">View Pricing →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2>What Our Clients Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="stars"><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg></div>
-                    <p>"I was nervous about Botox, but the team made me feel so comfortable. Results look incredibly natural!"</p>
-                    <strong>Sarah M.</strong>
-                    <span>Google Review</span>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars"><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg></div>
-                    <p>"Best fillers I've ever had. They really listen to what you want and don't push you into unnecessary treatments."</p>
-                    <strong>Jessica L.</strong>
-                    <span>Google Review</span>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars"><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg></div>
-                    <p>"The microneedling results are insane. My skin looks 10 years younger. Worth every penny!"</p>
-                    <strong>Michelle K.</strong>
-                    <span>Google Review</span>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars"><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5L14.8 9.2L21 10L16.5 14.2L17.6 20.2L12 17.1L6.4 20.2L7.5 14.2L3 10L9.2 9.2Z"></path></svg></div>
-                    <p>"Luxury experience from the moment you walk in. The office is gorgeous and the staff is SO professional."</p>
-                    <strong>Amanda T.</strong>
-                    <span>Google Review</span>
                 </div>
             </div>
         </div>
@@ -279,115 +297,160 @@
                     <button class="cta-secondary-small">Learn More</button>
                 </div>
             </div>
+
+            <div class="pricing-calculator">
+                <h3>Quick Estimate</h3>
+                <div class="calculator-controls">
+                    <div class="calc-input">
+                        <label for="service-select">Service</label>
+                        <select id="service-select">
+                            <option value="botox">Botox (per unit)</option>
+                            <option value="fillers">Dermal Fillers (per syringe)</option>
+                            <option value="microneedling">RF Microneedling (per session)</option>
+                            <option value="kybella">Kybella (per vial)</option>
+                            <option value="prp">PRP Hair (per session)</option>
+                            <option value="semaglutide">Semaglutide (per month)</option>
+                        </select>
+                    </div>
+                    <div class="calc-input">
+                        <label for="quantity-input">Quantity</label>
+                        <input type="number" id="quantity-input" value="1" min="1" max="10">
+                    </div>
+                </div>
+                <div class="calculator-result">
+                    <p>Estimated Cost: <strong id="result-price">$13.50</strong></p>
+                </div>
+            </div>
+
             <p class="pricing-note"><svg class="icon-inline" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"></rect><path d="M3 10H21"></path><path d="M7 14H11"></path></svg>0% Interest Payment Plans Available | Most Insurance Accepted</p>
         </div>
     </section>
 
-    <div class="pricing-calculator">
-        <h3>Quick Calculator</h3>
-        <div class="calculator-controls">
-            <select id="calc-service">
-                <option value="botox">Botox: $13.50/unit</option>
-                <option value="fillers">Fillers: $700</option>
-                <option value="microneedling">Microneedling: $1000</option>
-            </select>
-            <input type="number" id="calc-quantity" value="1" min="1" max="10">
-        </div>
-        <p>Cost: <strong id="calc-result">$13.50</strong></p>
-    </div>
-
-    <section class="booking" id="booking">
-        <div class="cta-section-inner">
-            <div class="cta-left">
-                <h2>Ready to Look & Feel Your Best?</h2>
-                <p>Schedule your FREE consultation with our aesthetics experts today. Same-day appointments often available.</p>
-                <div class="cta-trust-badges">
-                    <span>★ 5.0 Google Rating</span>
-                    <span>✓ Board-Certified Experts</span>
-                    <span>◆ 459+ Happy Clients</span>
-                </div>
-                <button class="cta-main-btn" onclick="openBookingModal()">Book Free Consultation</button>
-            </div>
-            <div class="cta-right">
-                <div class="cta-contact-cards">
-                    <a href="tel:+13052040659" class="cta-contact-card">
-                        <span class="cta-icon">☎</span>
-                        <div>
-                            <strong>Call Us</strong>
-                            <span>(305) 204-0659</span>
-                        </div>
-                    </a>
-                    <a href="sms:+13052040659" class="cta-contact-card">
-                        <span class="cta-icon">✉</span>
-                        <div>
-                            <strong>Text Us</strong>
-                            <span>(305) 204-0659</span>
-                        </div>
-                    </a>
-                    <a href="mailto:inquiries@lovethenuyou.com" class="cta-contact-card">
-                        <span class="cta-icon">@</span>
-                        <div>
-                            <strong>Email Us</strong>
-                            <span>inquiries@lovethenuyou.com</span>
-                        </div>
-                    </a>
-                    <a href="#contact" class="cta-contact-card">
-                        <span class="cta-icon">◆</span>
-                        <div>
-                            <strong>Visit Us</strong>
-                            <span>888 Biscayne Blvd, Miami</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- Before/After Gallery -->
     <section class="before-after-gallery" id="gallery">
         <div class="container">
             <h2>Transformation Gallery</h2>
             <div class="before-after-grid">
                 <div class="before-after-slider">
-                    <div class="slider-placeholder before-side"></div>
-                    <div class="slider-placeholder after-side"></div>
+                    <div class="before-side"></div>
+                    <div class="after-side"></div>
                     <div class="slider-divider"></div>
                     <div class="slider-label before">Before</div>
                     <div class="slider-label after">After</div>
+                    <p class="slider-title">Botox Treatment</p>
                 </div>
                 <div class="before-after-slider">
-                    <div class="slider-placeholder before-side"></div>
-                    <div class="slider-placeholder after-side"></div>
+                    <div class="before-side"></div>
+                    <div class="after-side"></div>
                     <div class="slider-divider"></div>
                     <div class="slider-label before">Before</div>
                     <div class="slider-label after">After</div>
+                    <p class="slider-title">Filler Enhancement</p>
                 </div>
                 <div class="before-after-slider">
-                    <div class="slider-placeholder before-side"></div>
-                    <div class="slider-placeholder after-side"></div>
+                    <div class="before-side"></div>
+                    <div class="after-side"></div>
                     <div class="slider-divider"></div>
                     <div class="slider-label before">Before</div>
                     <div class="slider-label after">After</div>
+                    <p class="slider-title">Skin Resurfacing</p>
                 </div>
                 <div class="before-after-slider">
-                    <div class="slider-placeholder before-side"></div>
-                    <div class="slider-placeholder after-side"></div>
+                    <div class="before-side"></div>
+                    <div class="after-side"></div>
                     <div class="slider-divider"></div>
                     <div class="slider-label before">Before</div>
                     <div class="slider-label after">After</div>
+                    <p class="slider-title">Body Contouring</p>
                 </div>
                 <div class="before-after-slider">
-                    <div class="slider-placeholder before-side"></div>
-                    <div class="slider-placeholder after-side"></div>
+                    <div class="before-side"></div>
+                    <div class="after-side"></div>
                     <div class="slider-divider"></div>
                     <div class="slider-label before">Before</div>
                     <div class="slider-label after">After</div>
+                    <p class="slider-title">Hair Restoration</p>
                 </div>
                 <div class="before-after-slider">
-                    <div class="slider-placeholder before-side"></div>
-                    <div class="slider-placeholder after-side"></div>
+                    <div class="before-side"></div>
+                    <div class="after-side"></div>
                     <div class="slider-divider"></div>
                     <div class="slider-label before">Before</div>
                     <div class="slider-label after">After</div>
+                    <p class="slider-title">Event Prep</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-carousel">
+                <div class="carousel-viewport">
+                    <div class="carousel-track" id="testimonialTrack">
+                        <div class="testimonial-card">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"I was nervous about Botox, but the team made me feel so comfortable. Results look incredibly natural!"</p>
+                            <strong>Sarah M.</strong>
+                            <span>Google Review</span>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Best fillers I've ever had. They really listen to what you want and don't push you into unnecessary treatments."</p>
+                            <strong>Jessica L.</strong>
+                            <span>Google Review</span>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"The microneedling results are insane. My skin looks 10 years younger. Worth every penny!"</p>
+                            <strong>Michelle K.</strong>
+                            <span>Google Review</span>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="stars">⭐⭐⭐⭐⭐</div>
+                            <p>"Luxury experience from the moment you walk in. The office is gorgeous and the staff is SO professional."</p>
+                            <strong>Amanda T.</strong>
+                            <span>Google Review</span>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="carousel-nav prev" id="testimonialPrev" aria-label="Previous review">❮</button>
+                <button type="button" class="carousel-nav next" id="testimonialNext" aria-label="Next review">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="booking-cta-grid">
+                <div class="booking-cta-left">
+                    <h3>Get in Touch</h3>
+                    <p>Multiple ways to reach our expert team</p>
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="contact-icon">☎</div>
+                            <h4>Call Us</h4>
+                            <p><a href="tel:+13052040659">(305) 204-0659</a></p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">✉</div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:inquiries@lovethenuyou.com">inquiries@lovethenuyou.com</a></p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">✦</div>
+                            <h4>Text</h4>
+                            <p><a href="sms:+13052040659">(305) 204-0659</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="booking-cta-right">
+                    <div class="cta-card">
+                        <h3>Book Your Appointment</h3>
+                        <p>Start your transformation today with a free consultation</p>
+                        <button type="button" class="cta-primary cta-large" onclick="openBookingModal()">Book Online Now</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -441,8 +504,8 @@
         </div>
     </footer>
 
-    <!-- Booking Modal - scrollable body, fixed footer buttons -->
-    <div class="booking-modal-overlay" id="bookingModal">
+    <!-- Booking Modal (legacy UI — retained; ids suffixed to avoid conflict with 6-step modal) - scrollable body, fixed footer buttons -->
+    <div class="booking-modal-overlay" id="bookingModalLegacy">
         <div class="booking-modal">
             <div class="modal-header">
                 <h2>Book Your Treatment</h2>
@@ -450,17 +513,17 @@
             </div>
 
             <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
+                <div class="progress-fill" id="progressFillLegacy"></div>
             </div>
             <div class="step-indicator">
-                <span class="step-label" id="stepLabel">Step 1 of 6</span>
+                <span class="step-label" id="stepLabelLegacy">Step 1 of 6</span>
             </div>
 
             <div class="modal-content-wrapper">
             <div class="modal-content">
                 <div class="modal-main">
                     <!-- Step 1: Treatment Category -->
-                    <div class="booking-step active" id="step1">
+                    <div class="booking-step active" id="step1Legacy">
                         <h3>Select Treatment Category</h3>
                         <div class="category-list">
                             <div class="category-item" onclick="toggleCategory(this)">
@@ -526,14 +589,14 @@
                     </div>
 
                     <!-- Step 2: Treatment Details -->
-                    <div class="booking-step" id="step2">
-                        <h3 id="treatmentTitle">Treatment Details</h3>
-                        <p id="treatmentDescription">Select a category first.</p>
-                        <p><strong>Duration:</strong> <span id="treatmentDuration">-</span></p>
+                    <div class="booking-step" id="step2Legacy">
+                        <h3 id="treatmentTitleLegacy">Treatment Details</h3>
+                        <p id="treatmentDescriptionLegacy">Select a category first.</p>
+                        <p><strong>Duration:</strong> <span id="treatmentDurationLegacy">-</span></p>
                     </div>
 
                     <!-- Step 3: Select Provider -->
-                    <div class="booking-step" id="step3">
+                    <div class="booking-step" id="step3Legacy">
                         <h3>Select Your Provider</h3>
                         <div class="providers-grid">
                             <div class="provider-card" onclick="selectProvider(this, 'Jordan Ellis')">
@@ -558,49 +621,158 @@
                     </div>
 
                     <!-- Step 4: Select Date & Time (NEW SEPARATE STEP) -->
-                    <div class="booking-step" id="step4">
+                    <div class="booking-step" id="step4Legacy">
                         <h3>Select Date & Time</h3>
-                        <div class="calendar-wrapper" id="calendar"></div>
+                        <div class="calendar-wrapper" id="calendarLegacy"></div>
                     </div>
 
                     <!-- Step 5: Patient Information (NEW SEPARATE STEP) -->
-                    <div class="booking-step" id="step5">
+                    <div class="booking-step" id="step5Legacy">
                         <h3>Your Information</h3>
                         <form class="patient-form">
-                            <input type="text" placeholder="First Name *" id="firstName" required>
-                            <input type="text" placeholder="Last Name *" id="lastName" required>
-                            <input type="email" placeholder="Email *" id="email" required>
-                            <input type="tel" placeholder="Phone *" id="phone" required>
-                            <textarea placeholder="Treatment Goals *" id="goals" rows="3" required></textarea>
+                            <input type="text" placeholder="First Name *" id="firstNameLegacy" required>
+                            <input type="text" placeholder="Last Name *" id="lastNameLegacy" required>
+                            <input type="email" placeholder="Email *" id="emailLegacy" required>
+                            <input type="tel" placeholder="Phone *" id="phoneLegacy" required>
+                            <textarea placeholder="Treatment Goals *" id="goalsLegacy" rows="3" required></textarea>
                         </form>
                     </div>
 
                     <!-- Step 6: Confirmation -->
-                    <div class="booking-step" id="step6">
+                    <div class="booking-step" id="step6Legacy">
                         <h3>Confirm Your Booking</h3>
                         <div class="confirmation-summary">
-                            <p><strong>Treatment:</strong> <span id="confirmTreatment">-</span></p>
-                            <p><strong>Provider:</strong> <span id="confirmProvider">-</span></p>
-                            <p><strong>Date:</strong> <span id="confirmDate">-</span></p>
-                            <p><strong>Name:</strong> <span id="confirmName">-</span></p>
-                            <p><strong>Email:</strong> <span id="confirmEmail">-</span></p>
+                            <p><strong>Treatment:</strong> <span id="confirmTreatmentLegacy">-</span></p>
+                            <p><strong>Provider:</strong> <span id="confirmProviderLegacy">-</span></p>
+                            <p><strong>Date:</strong> <span id="confirmDateLegacy">-</span></p>
+                            <p><strong>Name:</strong> <span id="confirmNameLegacy">-</span></p>
+                            <p><strong>Email:</strong> <span id="confirmEmailLegacy">-</span></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="modal-sidebar">
                     <h4>Booking Summary</h4>
-                    <div class="summary-item"><span>Treatment:</span><strong id="sidebarTreatment">-</strong></div>
-                    <div class="summary-item"><span>Provider:</span><strong id="sidebarProvider">-</strong></div>
-                    <div class="summary-item"><span>Date:</span><strong id="sidebarDate">-</strong></div>
+                    <div class="summary-item"><span>Treatment:</span><strong id="sidebarTreatmentLegacy">-</strong></div>
+                    <div class="summary-item"><span>Provider:</span><strong id="sidebarProviderLegacy">-</strong></div>
+                    <div class="summary-item"><span>Date:</span><strong id="sidebarDateLegacy">-</strong></div>
                 </div>
             </div>
             </div>
 
             <div class="modal-buttons-footer">
-                <div class="button-group" id="buttonGroup"></div>
+                <div class="button-group" id="buttonGroupLegacy"></div>
             </div>
         </div>
+    </div>
+
+    <!-- Booking Modal — 6-step flow -->
+    <div id="bookingModal" class="booking-modal-overlay" aria-hidden="true">
+    <div class="booking-modal-inner" role="dialog" aria-modal="true" aria-labelledby="stepTitle">
+        <div class="modal-header">
+            <h2 id="stepTitle">Select Service Category</h2>
+            <button type="button" class="modal-close" aria-label="Close" onclick="closeBookingModal()">×</button>
+        </div>
+
+        <div class="modal-progress">
+            <div id="progressFill" class="progress-bar"></div>
+            <div class="step-dots" role="list">
+                <div class="step-dot active" data-step="1" role="listitem" aria-label="Step 1"></div>
+                <div class="step-dot" data-step="2" role="listitem" aria-label="Step 2"></div>
+                <div class="step-dot" data-step="3" role="listitem" aria-label="Step 3"></div>
+                <div class="step-dot" data-step="4" role="listitem" aria-label="Step 4"></div>
+                <div class="step-dot" data-step="5" role="listitem" aria-label="Step 5"></div>
+                <div class="step-dot" data-step="6" role="listitem" aria-label="Step 6"></div>
+            </div>
+        </div>
+
+        <div id="stepError" class="step-error" style="display:none" role="alert"></div>
+
+        <div class="modal-content">
+            <div class="booking-step active" id="step1">
+                <div class="category-grid">
+                    <div class="category-tile" data-key="injectables" onclick="selectCategory(this, 'injectables')">
+                        <div class="category-icon">💉</div>
+                        <h3>Injectables</h3>
+                        <p>Botox, Fillers</p>
+                    </div>
+                    <div class="category-tile" data-key="skin" onclick="selectCategory(this, 'skin')">
+                        <div class="category-icon">✨</div>
+                        <h3>Skin Care</h3>
+                        <p>Lasers, Peels</p>
+                    </div>
+                    <div class="category-tile" data-key="body" onclick="selectCategory(this, 'body')">
+                        <div class="category-icon">💪</div>
+                        <h3>Body</h3>
+                        <p>Contouring</p>
+                    </div>
+                    <div class="category-tile" data-key="wellness" onclick="selectCategory(this, 'wellness')">
+                        <div class="category-icon">⚖️</div>
+                        <h3>Wellness</h3>
+                        <p>Weight Loss</p>
+                    </div>
+                    <div class="category-tile" data-key="hair" onclick="selectCategory(this, 'hair')">
+                        <div class="category-icon">💇</div>
+                        <h3>Hair</h3>
+                        <p>Restoration</p>
+                    </div>
+                    <div class="category-tile" data-key="events" onclick="selectCategory(this, 'events')">
+                        <div class="category-icon">🎊</div>
+                        <h3>Events</h3>
+                        <p>Prep Plans</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-step" id="step2">
+                <div id="serviceList" class="service-list"></div>
+            </div>
+
+            <div class="booking-step" id="step3">
+                <div id="providerList" class="provider-list"></div>
+            </div>
+
+            <div class="booking-step" id="step4">
+                <div class="date-time-section">
+                    <h3 class="date-time-heading">Select Date</h3>
+                    <div id="calendarDates" class="calendar-dates"></div>
+                    <h3 class="date-time-heading">Select Time</h3>
+                    <div id="timeSlots" class="time-slots"></div>
+                </div>
+            </div>
+
+            <div class="booking-step" id="step5">
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-row">
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required autocomplete="given-name">
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required autocomplete="family-name">
+                    </div>
+                    <input type="email" id="email" name="email" placeholder="Email" required autocomplete="email">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone" required autocomplete="tel">
+                    <textarea id="goals" name="goals" placeholder="Treatment goals or notes (optional)" rows="3"></textarea>
+                </form>
+            </div>
+
+            <div class="booking-step" id="step6">
+                <h3 class="review-heading">Review Your Booking</h3>
+                <div id="reviewSummary" class="review-summary"></div>
+            </div>
+        </div>
+
+        <div class="modal-buttons-footer new-booking-footer">
+            <button type="button" id="btnBack" class="btn-secondary" onclick="prevStep()" style="display:none">← Back</button>
+            <button type="button" id="btnNext" class="btn-primary">Next →</button>
+        </div>
+    </div>
+    </div>
+
+    <div id="bookingSuccess" class="booking-success" style="display:none" role="status" aria-live="polite">
+    <div class="success-card">
+        <div class="success-icon">✦</div>
+        <h2>Booking Confirmed!</h2>
+        <p>We'll contact you shortly to confirm your appointment.</p>
+        <button type="button" class="btn-primary" onclick="closeBookingModal(); location.reload();">Close</button>
+    </div>
     </div>
 
     <script src="assets/js/main.js"></script>
