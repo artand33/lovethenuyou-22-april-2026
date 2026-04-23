@@ -84,21 +84,13 @@ if (calcService) {
 
 let currentStep = 1;
 let bookingData = {
-    category: '',
-    treatment: '',
-    duration: '',
-    provider: '',
-    date: '',
-    time: '',
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    goals: ''
+    category: '', treatment: '', duration: '', provider: '',
+    date: '', firstName: '', lastName: '', email: '', phone: '', goals: ''
 };
 
 function openBookingModal() {
     document.getElementById('bookingModal').classList.add('active');
+    updateButtonGroup();
 }
 
 function closeBookingModal() {
@@ -115,13 +107,11 @@ function selectService(el, category, treatment, duration) {
     bookingData.category = category;
     bookingData.treatment = treatment;
     bookingData.duration = duration;
-
     document.getElementById('treatmentTitle').textContent = treatment;
-    document.getElementById('treatmentDescription').textContent = `Experience our professional ${treatment} treatment.`;
+    document.getElementById('treatmentDescription').textContent = `Experience our professional ${treatment} service.`;
     document.getElementById('treatmentDuration').textContent = duration;
-
     updateSidebar();
-    document.getElementById('stepBtn1').disabled = false;
+    updateButtonGroup();
 }
 
 function selectProvider(el, provider) {
@@ -129,32 +119,42 @@ function selectProvider(el, provider) {
     el.classList.add('selected');
     bookingData.provider = provider;
     updateSidebar();
-    document.getElementById('stepBtn3').disabled = false;
+    updateButtonGroup();
+}
+
+/** Pick a calendar day; `el` is the clicked row (fixes reliance on global `event`). */
+function selectDate(dateStr, el) {
+    bookingData.date = dateStr;
+    document.querySelectorAll('.calendar-date').forEach(d => {
+        if (!d.classList.contains('calendar-date--busy')) d.classList.remove('selected');
+    });
+    if (el) el.classList.add('selected');
+    updateSidebar();
+    updateButtonGroup();
 }
 
 function nextStep() {
-    if (currentStep < 5) {
-        if (currentStep === 4) {
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const goals = document.getElementById('goals').value;
+    if (currentStep === 5) {
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const goals = document.getElementById('goals').value;
 
-            if (!firstName || !lastName || !email || !phone || !goals) {
-                alert('Please fill in all fields');
-                return;
-            }
-
-            bookingData.firstName = firstName;
-            bookingData.lastName = lastName;
-            bookingData.email = email;
-            bookingData.phone = phone;
-            bookingData.goals = goals;
-
-            updateConfirmation();
+        if (!firstName || !lastName || !email || !phone || !goals) {
+            alert('Please fill in all fields');
+            return;
         }
 
+        bookingData.firstName = firstName;
+        bookingData.lastName = lastName;
+        bookingData.email = email;
+        bookingData.phone = phone;
+        bookingData.goals = goals;
+        updateConfirmation();
+    }
+
+    if (currentStep < 6) {
         currentStep++;
         updateStep();
     }
@@ -171,64 +171,133 @@ function updateStep() {
     document.querySelectorAll('.booking-step').forEach(step => step.classList.remove('active'));
     document.getElementById('step' + currentStep).classList.add('active');
 
-    const progress = (currentStep / 5) * 100;
+    const progress = (currentStep / 6) * 100;
     document.getElementById('progressFill').style.width = progress + '%';
-    document.getElementById('stepLabel').textContent = `Step ${currentStep} of 5`;
+    document.getElementById('stepLabel').textContent = `Step ${currentStep} of 6`;
+
+    updateButtonGroup();
+}
+
+function updateButtonGroup() {
+    const buttonGroup = document.getElementById('buttonGroup');
+    if (!buttonGroup) return;
+    buttonGroup.innerHTML = '';
+
+    if (currentStep === 6) {
+        const backBtn = document.createElement('button');
+        backBtn.className = 'btn-back';
+        backBtn.textContent = '← Back';
+        backBtn.onclick = prevStep;
+        buttonGroup.appendChild(backBtn);
+
+        const submitBtn = document.createElement('button');
+        submitBtn.className = 'btn-submit';
+        submitBtn.textContent = 'Confirm & Book';
+        submitBtn.onclick = submitBooking;
+        buttonGroup.appendChild(submitBtn);
+        return;
+    }
+
+    if (currentStep > 1) {
+        const backBtn = document.createElement('button');
+        backBtn.className = 'btn-back';
+        backBtn.textContent = '← Back';
+        backBtn.onclick = prevStep;
+        buttonGroup.appendChild(backBtn);
+    }
+
+    if (currentStep < 6) {
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'btn-next';
+        nextBtn.textContent = currentStep === 5 ? 'Review Booking' : 'Next';
+        nextBtn.id = 'stepBtn' + currentStep;
+        const gate =
+            (currentStep === 1 && !bookingData.treatment) ||
+            (currentStep === 3 && !bookingData.provider) ||
+            (currentStep === 4 && !bookingData.date);
+        nextBtn.disabled = gate;
+        nextBtn.onclick = nextStep;
+        buttonGroup.appendChild(nextBtn);
+    }
 }
 
 function updateSidebar() {
     document.getElementById('sidebarTreatment').textContent = bookingData.treatment || '-';
-    document.getElementById('sidebarCategory').textContent = bookingData.category || '-';
     document.getElementById('sidebarProvider').textContent = bookingData.provider || '-';
-    document.getElementById('sidebarDuration').textContent = bookingData.duration || '-';
+    document.getElementById('sidebarDate').textContent = bookingData.date || '-';
 }
 
 function updateConfirmation() {
     document.getElementById('confirmTreatment').textContent = bookingData.treatment;
     document.getElementById('confirmProvider').textContent = bookingData.provider;
-    document.getElementById('confirmDate').textContent = bookingData.date || 'Select date';
-    document.getElementById('confirmTime').textContent = bookingData.time || 'Select time';
-    document.getElementById('confirmDuration').textContent = bookingData.duration;
+    document.getElementById('confirmDate').textContent = bookingData.date;
     document.getElementById('confirmName').textContent = bookingData.firstName + ' ' + bookingData.lastName;
     document.getElementById('confirmEmail').textContent = bookingData.email;
-    document.getElementById('confirmPhone').textContent = bookingData.phone;
-    document.getElementById('confirmGoals').textContent = bookingData.goals;
 }
 
 function submitBooking() {
     console.log('Booking submitted:', bookingData);
-    alert('Booking submitted! We will contact you shortly to confirm.');
+    alert('Booking submitted! We will contact you shortly.');
     closeBookingModal();
 }
 
-// Open modal from BOOK NOW button
-document.querySelector('.book-now')?.addEventListener('click', openBookingModal);
-
-// Simple Calendar
 function initCalendar() {
     const calendarEl = document.getElementById('calendar');
     if (!calendarEl) return;
 
     const today = new Date();
-    const busyDates = ['2026-04-25', '2026-04-26', '2026-05-01', '2026-05-02'];
-    const busyTimes = { '2026-04-24': ['09:00', '10:00', '14:00'] };
+    let html = '';
 
-    let html = '<div style="font-size:0.9rem;">';
-    
     for (let i = 0; i < 30; i++) {
         const date = new Date(today);
         date.setDate(date.getDate() + i);
         const dateStr = date.toISOString().split('T')[0];
-        const isBusy = busyDates.includes(dateStr);
         const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
         const dayNum = date.getDate();
 
-        const style = isBusy ? 'opacity: 0.5; cursor: not-allowed;' : 'cursor: pointer;';
-        html += `<div style="${style} padding:8px; margin:4px 0; background:#f0f0f0; border-radius:4px;" onclick="${isBusy ? '' : `bookingData.date='${dateStr}'; alert('Date selected: ${dateStr}')`}">${dayName} - ${dayNum}</div>`;
+        const busyDates = ['2026-04-25', '2026-04-26', '2026-05-01'];
+        const isBusy = busyDates.includes(dateStr);
+
+        if (isBusy) {
+            html += `<div class="calendar-date calendar-date--busy">${dayName} - ${dayNum}</div>`;
+        } else {
+            html += `<div class="calendar-date" onclick="selectDate('${dateStr}', this)">${dayName} - ${dayNum}</div>`;
+        }
     }
 
-    html += '</div>';
     calendarEl.innerHTML = html;
 }
 
-window.addEventListener('load', initCalendar);
+if (!document.getElementById('booking-calendar-styles')) {
+    const style = document.createElement('style');
+    style.id = 'booking-calendar-styles';
+    style.textContent = `
+.calendar-date {
+    padding: 8px;
+    margin: 4px 0;
+    background: #f0f0f0;
+    border-radius: 4px;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.calendar-date--busy {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.calendar-date:not(.calendar-date--busy):hover {
+    background: #D4A574;
+}
+.calendar-date.selected {
+    background: #D4A574;
+    color: #1A1A1A;
+    font-weight: 600;
+}
+`;
+    document.head.appendChild(style);
+}
+
+document.querySelector('.book-now')?.addEventListener('click', openBookingModal);
+window.addEventListener('load', () => {
+    initCalendar();
+    updateButtonGroup();
+});

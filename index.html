@@ -26,7 +26,7 @@
                     <a href="#testimonials">Reviews</a>
                     <a href="#contact">Contact</a>
                 </nav>
-                <button class="cta-primary nav-cta" onclick="scrollTo('booking')">Book Now</button>
+                <button class="book-now" onclick="openBookingModal()">BOOK NOW</button>
                 <button class="menu-toggle" id="menuToggle">☰</button>
             </div>
         </div>
@@ -329,7 +329,7 @@
         </div>
     </footer>
 
-    <!-- Booking Modal -->
+    <!-- Booking Modal - scrollable body, fixed footer buttons -->
     <div class="booking-modal-overlay" id="bookingModal">
         <div class="booking-modal">
             <div class="modal-header">
@@ -341,17 +341,19 @@
                 <div class="progress-fill" id="progressFill"></div>
             </div>
             <div class="step-indicator">
-                <span class="step-label" id="stepLabel">Step 1 of 5</span>
+                <span class="step-label" id="stepLabel">Step 1 of 6</span>
             </div>
 
+            <div class="modal-content-wrapper">
             <div class="modal-content">
                 <div class="modal-main">
+                    <!-- Step 1: Treatment Category -->
                     <div class="booking-step active" id="step1">
                         <h3>Select Treatment Category</h3>
                         <div class="category-list">
                             <div class="category-item" onclick="toggleCategory(this)">
                                 <span class="icon">💉</span>
-                                <span class="name">Anti-Aging & Preservation</span>
+                                <span class="name">Anti – Aging & Preservation</span>
                                 <span class="arrow">▼</span>
                             </div>
                             <div class="services-hidden">
@@ -371,7 +373,7 @@
 
                             <div class="category-item" onclick="toggleCategory(this)">
                                 <span class="icon">✨</span>
-                                <span class="name">Collagen-Creation & Gradual Volumization</span>
+                                <span class="name">Collagen-Creation & Volumization</span>
                                 <span class="arrow">▼</span>
                             </div>
                             <div class="services-hidden">
@@ -409,58 +411,49 @@
                                 <div class="service-option" onclick="selectService(this, 'Wellness', 'Wellness Shots', '15 min')">Wellness Shots</div>
                             </div>
                         </div>
-                        <button class="btn-next" onclick="nextStep()" disabled id="stepBtn1">Next</button>
                     </div>
 
+                    <!-- Step 2: Treatment Details -->
                     <div class="booking-step" id="step2">
                         <h3 id="treatmentTitle">Treatment Details</h3>
-                        <div class="treatment-details">
-                            <p id="treatmentDescription">Select a category first to see treatment details.</p>
-                            <p class="duration"><strong>Duration:</strong> <span id="treatmentDuration">-</span></p>
-                        </div>
-                        <div class="button-group">
-                            <button class="btn-back" onclick="prevStep()">← Back</button>
-                            <button class="btn-next" onclick="nextStep()">Next</button>
-                        </div>
+                        <p id="treatmentDescription">Select a category first.</p>
+                        <p><strong>Duration:</strong> <span id="treatmentDuration">-</span></p>
                     </div>
 
+                    <!-- Step 3: Select Provider -->
                     <div class="booking-step" id="step3">
                         <h3>Select Your Provider</h3>
                         <div class="providers-grid">
                             <div class="provider-card" onclick="selectProvider(this, 'Nicole Habib')">
-                                <div class="provider-image" style="background: linear-gradient(135deg, #c9b5a0, #d4a574); height: 150px; border-radius: 8px; margin-bottom: 12px;"></div>
+                                <div class="provider-image" style="background: linear-gradient(135deg, #c9b5a0, #d4a574); height: 120px; border-radius: 8px; margin-bottom: 10px;"></div>
                                 <h4>Nicole Habib MMS, PA-C</h4>
                                 <p class="title">Founder & Injection Artist</p>
-                                <p class="bio">Trusted aesthetic injector since 2011. Expert in advanced non-surgical techniques.</p>
+                                <p class="bio">Trusted expert since 2011.</p>
                             </div>
-
                             <div class="provider-card" onclick="selectProvider(this, 'Lisa MacLachlan')">
-                                <div class="provider-image" style="background: linear-gradient(135deg, #a0b5c9, #8b9fb5); height: 150px; border-radius: 8px; margin-bottom: 12px;"></div>
+                                <div class="provider-image" style="background: linear-gradient(135deg, #a0b5c9, #8b9fb5); height: 120px; border-radius: 8px; margin-bottom: 10px;"></div>
                                 <h4>Lisa MacLachlan MSN, APRN</h4>
                                 <p class="title">Injection Artist</p>
-                                <p class="bio">7+ years of experience in dermatology and medical aesthetics. University of Miami trained.</p>
+                                <p class="bio">7+ years experience.</p>
                             </div>
-
                             <div class="provider-card" onclick="selectProvider(this, 'Dr. Sarah Mitchell')">
-                                <div class="provider-image" style="background: linear-gradient(135deg, #d4a574, #c9b5a0); height: 150px; border-radius: 8px; margin-bottom: 12px;"></div>
+                                <div class="provider-image" style="background: linear-gradient(135deg, #d4a574, #c9b5a0); height: 120px; border-radius: 8px; margin-bottom: 10px;"></div>
                                 <h4>Dr. Sarah Mitchell MD</h4>
                                 <p class="title">Medical Director</p>
-                                <p class="bio">Board-certified dermatologist with 15+ years of aesthetic medicine expertise.</p>
+                                <p class="bio">Board-certified dermatologist.</p>
                             </div>
-                        </div>
-                        <div class="button-group">
-                            <button class="btn-back" onclick="prevStep()">← Back</button>
-                            <button class="btn-next" onclick="nextStep()" disabled id="stepBtn3">Next</button>
                         </div>
                     </div>
 
+                    <!-- Step 4: Select Date & Time (NEW SEPARATE STEP) -->
                     <div class="booking-step" id="step4">
                         <h3>Select Date & Time</h3>
-                        <div class="calendar-wrapper">
-                            <div id="calendar"></div>
-                        </div>
+                        <div class="calendar-wrapper" id="calendar"></div>
+                    </div>
 
-                        <h3 style="margin-top: 24px;">Your Information</h3>
+                    <!-- Step 5: Patient Information (NEW SEPARATE STEP) -->
+                    <div class="booking-step" id="step5">
+                        <h3>Your Information</h3>
                         <form class="patient-form">
                             <input type="text" placeholder="First Name *" id="firstName" required>
                             <input type="text" placeholder="Last Name *" id="lastName" required>
@@ -468,61 +461,32 @@
                             <input type="tel" placeholder="Phone *" id="phone" required>
                             <textarea placeholder="Treatment Goals *" id="goals" rows="3" required></textarea>
                         </form>
-
-                        <div class="button-group">
-                            <button class="btn-back" onclick="prevStep()">← Back</button>
-                            <button class="btn-next" onclick="nextStep()" disabled id="stepBtn4">Review Booking</button>
-                        </div>
                     </div>
 
-                    <div class="booking-step" id="step5">
+                    <!-- Step 6: Confirmation -->
+                    <div class="booking-step" id="step6">
                         <h3>Confirm Your Booking</h3>
                         <div class="confirmation-summary">
                             <p><strong>Treatment:</strong> <span id="confirmTreatment">-</span></p>
                             <p><strong>Provider:</strong> <span id="confirmProvider">-</span></p>
                             <p><strong>Date:</strong> <span id="confirmDate">-</span></p>
-                            <p><strong>Time:</strong> <span id="confirmTime">-</span></p>
-                            <p><strong>Duration:</strong> <span id="confirmDuration">-</span></p>
                             <p><strong>Name:</strong> <span id="confirmName">-</span></p>
                             <p><strong>Email:</strong> <span id="confirmEmail">-</span></p>
-                            <p><strong>Phone:</strong> <span id="confirmPhone">-</span></p>
-                            <p><strong>Goals:</strong> <span id="confirmGoals">-</span></p>
-                        </div>
-
-                        <div class="button-group">
-                            <button class="btn-back" onclick="prevStep()">← Back</button>
-                            <button class="btn-submit" onclick="submitBooking()">Confirm & Book</button>
                         </div>
                     </div>
                 </div>
 
                 <div class="modal-sidebar">
                     <h4>Booking Summary</h4>
-                    <div class="summary-item">
-                        <span>Treatment:</span>
-                        <strong id="sidebarTreatment">-</strong>
-                    </div>
-                    <div class="summary-item">
-                        <span>Category:</span>
-                        <strong id="sidebarCategory">-</strong>
-                    </div>
-                    <div class="summary-item">
-                        <span>Provider:</span>
-                        <strong id="sidebarProvider">-</strong>
-                    </div>
-                    <div class="summary-item">
-                        <span>Date:</span>
-                        <strong id="sidebarDate">-</strong>
-                    </div>
-                    <div class="summary-item">
-                        <span>Time:</span>
-                        <strong id="sidebarTime">-</strong>
-                    </div>
-                    <div class="summary-item">
-                        <span>Duration:</span>
-                        <strong id="sidebarDuration">-</strong>
-                    </div>
+                    <div class="summary-item"><span>Treatment:</span><strong id="sidebarTreatment">-</strong></div>
+                    <div class="summary-item"><span>Provider:</span><strong id="sidebarProvider">-</strong></div>
+                    <div class="summary-item"><span>Date:</span><strong id="sidebarDate">-</strong></div>
                 </div>
+            </div>
+            </div>
+
+            <div class="modal-buttons-footer">
+                <div class="button-group" id="buttonGroup"></div>
             </div>
         </div>
     </div>
